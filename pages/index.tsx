@@ -103,6 +103,10 @@ const Home: NextPage = () => (
         <span className="text-gray-600 mr-2">LinkedIn</span>
         <span>janetpaul0</span>
       </a>
+      <a href="/Janet Paul.pdf" className="flex items-center mt-4">
+        <span className="text-gray-600 mr-2">Resume</span>
+        <span>download</span>
+      </a>
       <a href="mailto:hi@janetpaul.com" className="flex items-center mt-4">
         <span className="text-gray-600 mr-2">Email</span>
         <span>hi@janetpaul.com</span>
