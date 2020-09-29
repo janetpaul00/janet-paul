@@ -1,13 +1,12 @@
 module.exports = {
+  future: {
+    purgeLayersByDefault: true,
+    removeDeprecatedGapUtilities: true
+  },
   plugins: [],
+  purge: ['./**/*.tsx', './assets/global.scss'],
   theme: {
     extend: {
-      colors: {
-        blue: '#0091ff',
-        orange: '#fa6400',
-        purple: '#6236ff',
-        red: '#e02020'
-      },
       fontFamily: {
         sans: [
           'Inter',
@@ -23,5 +22,8 @@ module.exports = {
       }
     }
   },
-  variants: {}
+  variants: {
+    borderWidth: ['responsive', 'first'],
+    padding: ['responsive', 'first']
+  }
 }
