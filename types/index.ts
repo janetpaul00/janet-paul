@@ -1,3 +1,5 @@
+import { RichTextBlock } from 'prismic-reactjs'
+
 export type Meta = {
   name: string
   subtitle: string
@@ -28,4 +30,14 @@ export type Experience = {
   to: string
   description: string[]
   type: 'Text' | 'List'
+}
+
+export type Post = {
+  slug: string
+  image: string
+  title: RichTextBlock[]
+  excerpt: string
+  content: RichTextBlock[]
+  date: string
+  tags: string[]
 }
