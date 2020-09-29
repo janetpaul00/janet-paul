@@ -24,7 +24,6 @@ const Blog: NextPage<Props> = ({ meta, post }) => (
     <header className="relative">
       <h1 className="text-blue-500 text-2xl font-semibold">{meta.name}</h1>
       <p className="font-medium">{meta.subtitle}</p>
-      <p className="text-3xl text-green-500 font-semibold mt-2">Blog</p>
       <nav className="absolute top-0 right-0">
         <Link href="/blog">
           <a className="text-green-500 font-medium">Blog</a>
