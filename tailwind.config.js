@@ -22,8 +22,5 @@ module.exports = {
       }
     }
   },
-  variants: {
-    borderWidth: ['responsive', 'first'],
-    padding: ['responsive', 'first']
-  }
+  variants: {}
 }

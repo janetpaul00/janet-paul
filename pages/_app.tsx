@@ -3,11 +3,19 @@ import '../assets/global.scss'
 import App from 'next/app'
 import React from 'react'
 
+import { Footer, Header } from '../components'
+
 class Janet extends App {
   render(): JSX.Element {
     const { Component, pageProps } = this.props
 
-    return <Component {...pageProps} />
+    return (
+      <>
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
+      </>
+    )
   }
 }
 

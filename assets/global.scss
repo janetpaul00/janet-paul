@@ -11,150 +11,23 @@
 // global
 
 body {
-  @apply bg-gray-300 font-sans cursor-default outline-none flex items-center justify-center min-h-screen;
+  @apply bg-white font-sans cursor-default;
 }
 
 img {
-  max-width: 100%;
-}
-
-ul {
-  @apply ml-6;
-
-  list-style: square;
+  @apply max-w-full;
 }
 
 // layout
 
 #__next {
-  @apply bg-white mx-auto flex flex-col overflow-hidden rounded-lg shadow-sm py-8;
-}
-
-header,
-main,
-footer {
-  @apply mx-8;
-}
-
-footer {
-  @apply mt-4 flex flex-col;
+  @apply flex flex-col max-w-4xl p-8 mx-auto;
 }
 
 // components
 
-.cards {
-  @apply flex flex-col  -mt-2;
-}
-
-.card {
-  @apply mt-4;
-}
-
-.experience {
-  @apply mb-2 flex flex-col;
-}
-
 .post {
-  @apply mt-4;
-
-  ul,
   p {
-    @apply my-2;
-  }
-}
-
-// responsive
-
-@media only screen and (min-width: 1024px) {
-  #__next {
-    @apply m-8;
-
-    min-height: 297mm;
-    width: 210mm;
-  }
-
-  footer {
-    @apply flex-row justify-between;
-  }
-
-  .list {
-    column-count: 2;
-    column-gap: 2rem;
-  }
-
-  .cards {
-    @apply flex-row mt-2 -ml-8;
-  }
-
-  .card {
-    @apply mt-0 ml-8 border-gray-200 border-l pl-8;
-
-    &:first-of-type {
-      @apply border-0 pl-0;
-    }
-  }
-
-  .experience {
-    @apply flex-row items-center;
-
-    h4 {
-      @apply mx-2;
-    }
-  }
-}
-
-// print
-
-@media print {
-  @page {
-    min-height: 297mm;
-    margin: 2rem;
-    width: 210mm;
-  }
-
-  body {
-    @apply bg-white block;
-  }
-
-  #__next {
-    @apply rounded-none shadow-none py-0 m-0;
-
-    min-height: 297mm;
-    width: 210mm;
-  }
-
-  header,
-  main,
-  footer {
-    @apply mx-0;
-  }
-
-  footer {
-    @apply flex-row justify-between;
-  }
-
-  .list {
-    column-count: 2;
-    column-gap: 2rem;
-  }
-
-  .cards {
-    @apply flex-row mt-2 -ml-8;
-  }
-
-  .card {
-    @apply mt-0 ml-8 border-gray-200 border-l pl-8;
-
-    &:first-of-type {
-      @apply border-0 pl-0;
-    }
-  }
-
-  .experience {
-    @apply flex-row items-center;
-
-    h4 {
-      @apply mx-2;
-    }
+    @apply my-2 leading-relaxed;
   }
 }

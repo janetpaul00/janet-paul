@@ -1,4 +1,4 @@
-import moment from 'moment'
+import dayjs from 'dayjs'
 import { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -21,28 +21,19 @@ const Blog: NextPage<Props> = ({ meta, posts }) => (
       </title>
     </Head>
 
-    <header className="relative">
-      <h1 className="text-blue-500 text-2xl font-semibold">{meta.name}</h1>
-      <p className="font-medium">{meta.subtitle}</p>
-      <Link href="/">
-        <a className="absolute top-0 right-0 text-blue-500 font-medium">
-          Resume
-        </a>
-      </Link>
-    </header>
-
     <main>
+      <h1 className="text-4xl font-semibold">Blog</h1>
       {posts.map((post) => (
         <Link key={post.slug} href={`/blog/${post.slug}`}>
-          <a className="flex items-center mt-8">
-            <img src={post.image} className="h-40 w-40 mr-4" />
-            <article>
-              <h2 className="text-3xl font-medium leading-tight">
+          <a className="flex flex-col lg:flex-row lg:items-center mt-16">
+            <img src={post.image} className="h-40 w-40" />
+            <article className="mt-4 lg:mt-0 lg:ml-8">
+              <h2 className="text-2xl font-semibold leading-tight">
                 {RichText.asText(post.title)}
               </h2>
               <p className="my-2">{post.excerpt}</p>
               <p className="text-gray-600 text-sm">
-                {moment(post.date).format('lll')}
+                {dayjs(post.date).format('MMMM, YYYY')}
               </p>
             </article>
           </a>

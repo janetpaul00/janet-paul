@@ -62,7 +62,7 @@ class Content {
     const { results } = await this.client.query(
       Prismic.Predicates.at('document.type', 'experience'),
       {
-        orderings: '[my.experience.to desc]'
+        orderings: '[my.experience.from desc]'
       }
     )
 
