@@ -18,7 +18,7 @@ const Home: NextPage<Props> = ({ meta }) => (
     </Head>
 
     <main>
-      <img className="w-full" src="/resume.svg" />
+      <img className="w-full" src="/resume.png" />
     </main>
   </>
 )
