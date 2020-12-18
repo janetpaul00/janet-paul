@@ -19,7 +19,6 @@ const Blog: NextPage<Props> = ({ posts }) => (
     </Head>
 
     <main>
-      <h1 className="text-4xl font-semibold">Blog</h1>
       {posts.map((post) => (
         <Link href={`/blog/${post.slug}`} key={post.slug}>
           <a className="flex flex-col items-start lg:flex-row lg:items-center mt-16 text-black">

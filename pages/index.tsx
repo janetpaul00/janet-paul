@@ -14,8 +14,9 @@ const Home: NextPage = () => (
         ACCA affiliated accountant from Dubai
       </h1>
       <Image
-        className="rounded-full"
+        className="bg-gray-50 rounded-full"
         height={200}
+        priority
         src="/img/janet.jpg"
         width={200}
       />

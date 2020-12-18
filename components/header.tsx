@@ -8,7 +8,7 @@ export const Header: FunctionComponent = () => {
   return (
     <header className="flex items-center justify-between lg:mt-8 mb-16">
       <Link href="/">
-        <a className="text-teal-600 text-2xl lg:text-3xl font-semibold">
+        <a className="text-teal-600 text-2xl lg:text-3xl font-display font-semibold">
           Janet Paul
         </a>
       </Link>
