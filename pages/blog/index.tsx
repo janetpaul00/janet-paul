@@ -1,40 +1,35 @@
 import dayjs from 'dayjs'
 import { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
+import Image from 'next/image'
 import Link from 'next/link'
-import { RichText } from 'prismic-reactjs'
 import React from 'react'
 
-import { content } from '../../lib'
-import { Meta, Post } from '../../types'
+import { fetchPosts } from '../../lib'
+import { Post } from '../../types'
 
-interface Props {
-  meta: Meta
+type Props = {
   posts: Post[]
 }
 
-const Blog: NextPage<Props> = ({ meta, posts }) => (
+const Blog: NextPage<Props> = ({ posts }) => (
   <>
     <Head>
-      <title>
-        Blog / {meta.name} / {meta.subtitle}
-      </title>
+      <title>Blog / Janet Paul</title>
     </Head>
 
     <main>
       <h1 className="text-4xl font-semibold">Blog</h1>
       {posts.map((post) => (
-        <Link key={post.slug} href={`/blog/${post.slug}`}>
-          <a className="flex flex-col lg:flex-row lg:items-center mt-16">
-            <img src={post.image} className="h-40 w-40" />
-            <article className="mt-4 lg:mt-0 lg:ml-8">
-              <h2 className="text-2xl font-semibold leading-tight">
-                {RichText.asText(post.title)}
-              </h2>
-              <p className="my-2">{post.excerpt}</p>
-              <p className="text-gray-600 text-sm">
+        <Link href={`/blog/${post.slug}`} key={post.slug}>
+          <a className="flex flex-col items-start lg:flex-row lg:items-center mt-16 text-black">
+            <Image height={150} src={post.image} width={200} />
+            <article className="flex-1 mt-4 lg:mt-0 lg:ml-8">
+              <p className="text-gray-400">
                 {dayjs(post.date).format('MMMM, YYYY')}
               </p>
+              <h2 className="text-2xl font-semibold my-2">{post.title}</h2>
+              <p className="text-gray-500">{post.excerpt}</p>
             </article>
           </a>
         </Link>
@@ -44,12 +39,10 @@ const Blog: NextPage<Props> = ({ meta, posts }) => (
 )
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const meta = await content.meta()
-  const posts = await content.posts()
+  const posts = await fetchPosts()
 
   return {
     props: {
-      meta,
       posts
     }
   }

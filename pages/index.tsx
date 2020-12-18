@@ -1,36 +1,26 @@
-import { GetStaticProps, NextPage } from 'next'
+import { NextPage } from 'next'
 import Head from 'next/head'
+import Image from 'next/image'
 import React from 'react'
 
-import { content } from '../lib'
-import { Meta } from '../types'
-
-interface Props {
-  meta: Meta
-}
-
-const Home: NextPage<Props> = ({ meta }) => (
+const Home: NextPage = () => (
   <>
     <Head>
-      <title>
-        {meta.name} / {meta.subtitle}
-      </title>
+      <title>Janet Paul / ACCA affiliate, CIMA certified</title>
     </Head>
 
-    <main>
-      <img className="w-full" src="/resume.png" />
+    <main className="flex flex-col-reverse lg:flex-row items-start lg:items-center">
+      <h1 className="flex-1 text-5xl lg:text-6xl font-semibold leading-tight mt-8">
+        ACCA affiliated accountant from Dubai
+      </h1>
+      <Image
+        className="rounded-full"
+        height={200}
+        src="/img/janet.jpg"
+        width={200}
+      />
     </main>
   </>
 )
-
-export const getStaticProps: GetStaticProps = async () => {
-  const meta = await content.meta()
-
-  return {
-    props: {
-      meta
-    }
-  }
-}
 
 export default Home

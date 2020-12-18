@@ -1,1 +1,1 @@
-export { content } from './content'
+export * from './content'
