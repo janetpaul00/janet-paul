@@ -24,11 +24,15 @@ const Resume: NextPage<ResumeType> = ({ educations, experiences, meta }) => (
               <h1 className="font-body font-semibold text-3xl">{meta.name}</h1>
             </a>
           </Link>
-          <div className="text-gray-500 font-medium mt-1">{meta.subtitle}</div>
-          <Markdown className="text-xs">{meta.bio}</Markdown>
+          <div className="font-medium mt-1">{meta.subtitle}</div>
+          <Markdown className="text-xs text-gray-500">{meta.bio}</Markdown>
         </div>
-        <div className="text-gray-500 text-xs text-right ml-8">
-          <div>{meta.phone}</div>
+        <div className="text-xs text-right ml-8">
+          <div>
+            <a className="text-gray-500" href={`tel:${meta.phone}`}>
+              {meta.phone}
+            </a>
+          </div>
           <div className="mt-1">
             <a className="text-gray-500" href={meta.linkedin}>
               {meta.linkedin.slice(12)}

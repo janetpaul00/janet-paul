@@ -21,6 +21,10 @@ h6 {
   @apply font-display;
 }
 
+p {
+  @apply mt-1;
+}
+
 // layout
 
 #__next {
@@ -47,10 +51,6 @@ h6 {
 
       content: '\2713';
     }
-  }
-
-  p {
-    @apply mt-1;
   }
 }
 
