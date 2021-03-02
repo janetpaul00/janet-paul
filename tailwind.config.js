@@ -3,7 +3,7 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   darkMode: false,
   plugins: [],
-  purge: ['./**/*.tsx', './styles/*.scss'],
+  purge: ['./pages/**/*.tsx', './components/**/*.tsx', './styles/*.scss'],
   theme: {
     colors,
     extend: {},
@@ -13,6 +13,8 @@ module.exports = {
     }
   },
   variants: {
-    extend: {}
+    extend: {
+      margin: ['first']
+    }
   }
 }

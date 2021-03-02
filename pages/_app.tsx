@@ -1,17 +1,11 @@
-import 'tailwindcss/tailwindcss'
+import 'tailwindcss/tailwind.css'
 import '../styles/global.scss'
 
 import { AppProps } from 'next/app'
 import React, { FunctionComponent } from 'react'
 
-import { Footer, Header } from '../components'
-
 const Janet: FunctionComponent<AppProps> = ({ Component, pageProps }) => (
-  <>
-    <Header />
-    <Component {...pageProps} />
-    <Footer />
-  </>
+  <Component {...pageProps} />
 )
 
 export default Janet

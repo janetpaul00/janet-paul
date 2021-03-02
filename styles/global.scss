@@ -1,15 +1,15 @@
 // fonts
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600&display=swap');
 
 // global
 
 body {
-  @apply bg-white text-black font-body cursor-default;
+  @apply bg-teal-50 text-black font-body cursor-default;
 }
 
 a {
-  @apply text-teal-500 hover:text-teal-600 transition-colors;
+  @apply text-teal-600 hover:text-teal-500 transition-colors;
 }
 
 h1,
@@ -24,7 +24,7 @@ h6 {
 // layout
 
 #__next {
-  @apply flex flex-col min-h-screen max-w-3xl p-8 mx-auto;
+  @apply flex flex-col min-h-screen container p-8 mx-auto;
 
   & > main {
     @apply flex-1;
@@ -33,8 +33,31 @@ h6 {
 
 // components
 
-.post {
+#resume {
+  @apply mx-auto;
+
+  height: 297mm;
+  width: 210mm;
+
+  li {
+    @apply flex items-center mt-1;
+
+    &:before {
+      @apply flex-shrink-0 font-semibold pointer-events-none mr-2 text-teal-600;
+
+      content: '\2713';
+    }
+  }
+
   p {
-    @apply my-4;
+    @apply mt-1;
+  }
+}
+
+// print
+
+@media print {
+  #__next {
+    @apply p-0;
   }
 }
