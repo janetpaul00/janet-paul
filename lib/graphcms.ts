@@ -65,6 +65,11 @@ export const getResume = async (): Promise<ResumeType> => {
           to
           content
         }
+        skills {
+          id
+          title
+          description
+        }
       }
     `,
     {

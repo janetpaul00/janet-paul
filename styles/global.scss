@@ -21,10 +21,6 @@ h6 {
   @apply font-display;
 }
 
-p {
-  @apply mt-1;
-}
-
 // layout
 
 #__next {
@@ -44,13 +40,17 @@ p {
   width: 210mm;
 
   li {
-    @apply flex items-center mt-1;
+    @apply flex items-center mt-1 first:mt-0;
 
     &:before {
       @apply flex-shrink-0 font-semibold pointer-events-none mr-2 text-teal-600;
 
       content: '\2713';
     }
+  }
+
+  p {
+    @apply mt-2;
   }
 }
 

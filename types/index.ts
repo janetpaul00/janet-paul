@@ -29,8 +29,15 @@ export type ExperienceType = {
   content: string
 }
 
+export type SkillType = {
+  id: string
+  title: string
+  description: string
+}
+
 export type ResumeType = {
   educations: EducationType[]
   experiences: ExperienceType[]
+  skills: SkillType[]
   meta: MetaType
 }

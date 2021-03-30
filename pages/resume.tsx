@@ -8,7 +8,12 @@ import { Dates } from '../components'
 import { getResume } from '../lib'
 import { ResumeType } from '../types'
 
-const Resume: NextPage<ResumeType> = ({ educations, experiences, meta }) => (
+const Resume: NextPage<ResumeType> = ({
+  educations,
+  experiences,
+  meta,
+  skills
+}) => (
   <>
     <Head>
       <title>
@@ -64,7 +69,7 @@ const Resume: NextPage<ResumeType> = ({ educations, experiences, meta }) => (
                   type="experience"
                 />
               </div>
-              <Markdown className="text-xs">{content}</Markdown>
+              <Markdown className="text-xs mt-2">{content}</Markdown>
             </article>
           ))}
         </div>
@@ -87,6 +92,20 @@ const Resume: NextPage<ResumeType> = ({ educations, experiences, meta }) => (
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="flex mt-8">
+        <h2 className="font-body font-medium text-gray-500 w-32">Skills</h2>
+
+        <ul className="flex-1 text-sm">
+          {skills.map(({ description, id, title }) => (
+            <li key={id}>
+              <span className="font-semibold">{title}</span>
+              &#160;
+              {description}
+            </li>
+          ))}
+        </ul>
       </section>
     </main>
   </>
