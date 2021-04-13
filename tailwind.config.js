@@ -2,8 +2,9 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   darkMode: false,
+  mode: 'jit',
   plugins: [],
-  purge: ['./pages/**/*.tsx', './components/**/*.tsx', './styles/*.scss'],
+  purge: ['pages/**/*.tsx', 'components/**/*.tsx', 'styles/*.scss'],
   theme: {
     colors,
     extend: {},
@@ -12,9 +13,5 @@ module.exports = {
       display: ['Poppins', 'sans-serif']
     }
   },
-  variants: {
-    extend: {
-      margin: ['first']
-    }
-  }
+  variants: {}
 }
