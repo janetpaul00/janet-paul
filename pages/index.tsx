@@ -25,19 +25,22 @@ const Home: NextPage<Props> = ({ meta }) => (
     <main className="flex flex-col-reverse lg:flex-row items-start lg:items-center">
       <div className="flex-1 mt-8 lg:mt-0 lg:mr-8">
         <h1 className="text-4xl lg:text-6xl font-semibold lg:whitespace-pre">
-          {meta.subtitle}
+          {meta.subtitle.split(' | ').map((part) => (
+            <span className="block" key={part}>
+              {part}
+            </span>
+          ))}
         </h1>
         <Markdown className="mt-4">{meta.bio}</Markdown>
       </div>
-      <div className="w-52">
-        <Image
-          className="bg-gray-50 rounded-full"
-          height={meta.photo.height}
-          priority
-          src={meta.photo.url}
-          width={meta.photo.width}
-        />
-      </div>
+
+      <Image
+        className="bg-gray-50 rounded-full"
+        height={meta.photo.height / 2}
+        priority
+        src={meta.photo.url}
+        width={meta.photo.width / 2}
+      />
     </main>
 
     <Footer />
